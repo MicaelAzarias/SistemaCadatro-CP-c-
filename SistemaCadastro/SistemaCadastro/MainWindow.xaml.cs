@@ -19,7 +19,7 @@ namespace SistemaCadastro
             MostrarStatus("Sistema iniciado. Pronto para uso.", "#2563EB");
         }
 
-        // Switch que simula o menu interativo
+        
         private void ExecutarOpcao(int opcao)
         {
             switch (opcao)
@@ -34,7 +34,7 @@ namespace SistemaCadastro
             }
         }
 
-        // ── Opção 1: Adicionar ───────────────────────────────────────
+        
         private void OpcaoAdicionar()
         {
             if (!int.TryParse(EntradaID.Text.Trim(), out int id) || id <= 0)
@@ -65,7 +65,7 @@ namespace SistemaCadastro
             }
         }
 
-        // ── Opção 2: Listar ──────────────────────────────────────────
+        
         private void OpcaoListar()
         {
             List<(int Id, Pessoa Item)> lista = _cadastro.Listar();
@@ -86,7 +86,7 @@ namespace SistemaCadastro
                 : $"Exibindo todos os {total} registro(s).", "#2563EB");
         }
 
-        // ── Opção 3: Buscar ──────────────────────────────────────────
+        
         private void OpcaoBuscar()
         {
             string textoId = EntradaBuscaID.Text.Trim();
@@ -126,7 +126,7 @@ namespace SistemaCadastro
             }
         }
 
-        // ── Opção 4: Remover ─────────────────────────────────────────
+        
         private void OpcaoRemover()
         {
             if (!int.TryParse(EntradaID.Text.Trim(), out int id) || id <= 0)
@@ -169,7 +169,7 @@ namespace SistemaCadastro
             }
         }
 
-        // ── Botões ───────────────────────────────────────────────────
+        
         private void BtnAdicionar_Click(object sender, RoutedEventArgs e) => ExecutarOpcao(1);
         private void BtnListar_Click(object sender, RoutedEventArgs e) => ExecutarOpcao(2);
         private void BtnBuscar_Click(object sender, RoutedEventArgs e) => ExecutarOpcao(3);
@@ -183,7 +183,7 @@ namespace SistemaCadastro
             MostrarStatus("Campos limpos.", "#6B7280");
         }
 
-        // ── Helpers ──────────────────────────────────────────────────
+        
         private void LimparCampos()
         {
             EntradaID.Clear();
@@ -203,4 +203,5 @@ namespace SistemaCadastro
         public int Id { get; set; }
         public string Nome { get; set; } = string.Empty;
     }
+
 }
